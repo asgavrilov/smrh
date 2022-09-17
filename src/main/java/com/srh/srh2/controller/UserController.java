@@ -22,7 +22,7 @@ public class UserController {
 
     private final ProjectsService projectsService;
 
-    public UserController(@Value("${response.limit:50}") int responseLimit,
+    public UserController(@Value("${response.limit:15}") int responseLimit,
                           ProjectsService projectsService) {
         this.responseLimit = responseLimit;
         this.projectsService = projectsService;
