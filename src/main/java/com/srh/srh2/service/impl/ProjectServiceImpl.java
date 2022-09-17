@@ -16,16 +16,13 @@ public class ProjectServiceImpl implements ProjectsService {
     @Override
     public List<ProjectDTO> getProjects(String userId, int responseLimit) {
         List<ProjectDTO> userProjects = getProjectsWithRetry();
-        if (userProjects != null) {
             var res = userProjects.stream()
                     .filter(project -> project.getAdminUserIds().contains(userId))
                     .limit(responseLimit).toList();
             log.info("getting data size {} with userId {} and responseLimit {}",
                     res.size(), userId, responseLimit);
             return res;
-        } else {
-            throw new ResourceNotFoundException("no projects found");
-        }
+
     }
 
     private List<ProjectDTO> getProjectsWithRetry() {
