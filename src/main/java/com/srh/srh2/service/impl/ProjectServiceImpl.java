@@ -1,7 +1,6 @@
 package com.srh.srh2.service.impl;
 
 import com.srh.srh2.dto.ProjectDTO;
-import com.srh.srh2.exceptions.ResourceNotFoundException;
 import com.srh.srh2.service.ProjectsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
